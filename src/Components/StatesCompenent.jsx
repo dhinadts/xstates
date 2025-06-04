@@ -65,8 +65,10 @@ const SelectorComp = () => {
         <option value="" disabled>
           Select Country
         </option>
-        {countries.map((country) => (
-          <option value={country}>{country}</option>
+        {countries.map((country, index) => (
+          <option 
+          key={index}
+          value={country}>{country}</option>
         ))}
       </select>
       <select
@@ -79,8 +81,10 @@ const SelectorComp = () => {
         <option value="" disabled>
           Select State
         </option>
-        {states.map((country) => (
-          <option value={country}>{country}</option>
+        {states.map((country, index) => (
+          <option 
+          key={index}
+          value={country}>{country}</option>
         ))}
       </select>
       <select
@@ -93,8 +97,10 @@ const SelectorComp = () => {
         <option value="" disabled>
           Select City
         </option>
-        {cities.map((country) => (
-          <option value={country}>{country}</option>
+        {cities.map((country, index) => (
+          <option 
+           key={index}
+          value={country}>{country}</option>
         ))}
       </select>
       {selectedCity && (
