@@ -53,6 +53,8 @@ const SelectorComp = () => {
 
   return (
     <div>
+      <h1>Select Location</h1>
+
       <select
         value={selectedCountry}
         onChange={(e) => {
@@ -96,11 +98,14 @@ const SelectorComp = () => {
         ))}
       </select>
       {selectedCity && (
-        <h2>
-          You selected <span>{selectedCity},</span>
-          <span>
-            {selectedState}, {selectedCountry}
+        <h2 style={{ fontWeight: 400 }}>
+          You selected{" "}
+          <span style={{ fontWeight: 600, fontSize: 35 }}>
+            {selectedCity},{" "}
           </span>
+          {/* <span style={{fontWeight: 400}}> */}
+          {selectedState}, {selectedCountry}
+          {/* </span> */}
         </h2>
       )}
     </div>
