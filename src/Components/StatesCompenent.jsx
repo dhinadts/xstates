@@ -36,10 +36,7 @@ const SelectorComp = () => {
     }
   }, [selectedCountry]);
   useEffect(() => {
-    if (
-        selectedCountry
-        &&
-        selectedState) {
+    if (selectedCountry && selectedState) {
       const getCityList = `https://crio-location-selector.onrender.com/country=${selectedCountry}/state=${selectedState}/cities`;
 
       fetch(getCityList)
@@ -61,6 +58,7 @@ const SelectorComp = () => {
         onChange={(e) => {
           setSelectedCountry(e.target.value);
         }}
+        disabled={!states.length}
       >
         <option value="" disabled>
           Select Country
@@ -81,12 +79,13 @@ const SelectorComp = () => {
         {states.map((country) => (
           <option value={country}>{country}</option>
         ))}
-      </select>{" "}
+      </select>
       <select
         value={selectedCity}
         onChange={(e) => {
           setSelectedCity(e.target.value);
         }}
+        disabled={!cities.length}
       >
         <option value="" disabled>
           Select City
@@ -94,10 +93,14 @@ const SelectorComp = () => {
         {cities.map((country) => (
           <option value={country}>{country}</option>
         ))}
-      </select>{" "}
-
+      </select>
       {selectedCity && (
-        <h2> You selected <span>{selectedCity},</span><span>{selectedState}, {selectedCountry}</span></h2>
+        <h2>
+          You selected <span>{selectedCity},</span>
+          <span>
+            {selectedState}, {selectedCountry}
+          </span>
+        </h2>
       )}
     </div>
   );
