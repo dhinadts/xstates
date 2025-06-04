@@ -58,7 +58,7 @@ const SelectorComp = () => {
         onChange={(e) => {
           setSelectedCountry(e.target.value);
         }}
-        disabled={!states.length}
+        disabled={!countries.length}
       >
         <option value="" disabled>
           Select Country
@@ -72,6 +72,7 @@ const SelectorComp = () => {
         onChange={(e) => {
           setSelectedState(e.target.value);
         }}
+        disabled={!states.length}
       >
         <option value="" disabled>
           Select State
